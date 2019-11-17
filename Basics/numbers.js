@@ -12,3 +12,12 @@ let dogYears = (age + 1)/7;
 console.log('x: ' + x);
 console.log('num: ' + num);
 console.log('My age in Dog Years: ' + dogYears);
+
+//challenge:
+let questionsTotal = 183;
+let questionsWrong = 23;
+let score = (questionsTotal - questionsWrong) / questionsTotal;
+let percentage = score * 100;
+
+console.log('Questions wrong: ' + questionsWrong + ' out of ' + questionsTotal);
+console.log('Score: ' + percentage);
