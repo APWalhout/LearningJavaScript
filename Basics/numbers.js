@@ -1,0 +1,14 @@
+let x = 12;
+x = x * 2 + (3/4);
+
+let num = 11;
+num += 5;
+num *= 2;
+num /= 4;
+
+let age = 22;
+let dogYears = (age + 1)/7;
+
+console.log('x: ' + x);
+console.log('num: ' + num);
+console.log('My age in Dog Years: ' + dogYears);
