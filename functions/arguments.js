@@ -9,7 +9,7 @@ console.log(result);
 //default arguments are given as equivalency in the argument list
 let getScoreText = function (name = 'Player1', score = 0)
 {
-    return 'Name: ' + name + ', Score: ' + score;
+    return `'Name: ${name}, Score: ${score}`;
 }
 
 console.log(getScoreText(undefined, 99));//the first argument set to undefined allows the default to fall through
@@ -32,3 +32,4 @@ let name = 'Alex';
 let age = 23;
 //string template: note the ``
 console.log(`Hi, my name is ${name}! I am ${age} years old.`);//string injection
+//string templates are easier to read and rearrange.
