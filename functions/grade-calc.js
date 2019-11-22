@@ -1,8 +1,8 @@
 //accept score, total possible score
 //generate letter grade and percentage obtained
-let gradeCalc = function (score, total)
+const gradeCalc = function (score, total)
 {
-    let percent = (score/total) * 100;
+    const percent = (score/total) * 100;
     let grade = 'NA';
 
     //could individually put returns in the ifs to end the function
