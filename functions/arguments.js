@@ -18,7 +18,7 @@ console.log(getScoreText(undefined, 99));//the first argument set to undefined a
 //tip calculator
 let tipCalc = function (totalBill, tipPercent = .15)
 {
-    return totalBill * tipPercent;
+    return `A ${tipPercent * 100}% tip on $${totalBill} would be $${totalBill * tipPercent}.`;
 }
 
 console.log('Tip ammount: ' + tipCalc(37.65, .2));
