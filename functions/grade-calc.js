@@ -5,6 +5,8 @@ let gradeCalc = function (score, total)
     let percent = (score/total) * 100;
     let grade = 'NA';
 
+    //could individually put returns in the ifs to end the function
+    //however, makes redundant lines of code and is more than necessary to read
     if (percent >= 90)
     {
         grade = 'A';
