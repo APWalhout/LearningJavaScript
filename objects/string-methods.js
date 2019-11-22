@@ -22,11 +22,12 @@ console.log(trimStr.trim());
 let isValidPassword = function (passcode)
 {
     let wordCheck = passcode.toLowerCase();//this step allows quick checks for all forms of 'password' occurrence
-    if ((passcode.length < 8) || (wordCheck.includes('password')))
+    /*if ((passcode.length < 8) || (wordCheck.includes('password')))
     {
         return false;
     }
-    return true;
+    return true;*/
+    return !((passcode.length < 8) || (wordCheck.includes('password')));
 }
 
 console.log(isValidPassword('PaSSwoRd'));
