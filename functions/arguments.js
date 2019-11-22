@@ -23,3 +23,12 @@ let tipCalc = function (totalBill, tipPercent = .15)
 
 console.log('Tip ammount: ' + tipCalc(37.65, .2));
 console.log('Tip ammount: ' + tipCalc(37.65));
+
+//string templates discussion
+console.log("Alex");//double quotes can be used for all strings, don't use combos of ' and ""
+//could do "Alex" + 'Walhout'. cant open with ' and close with ". Pick one and stick with it.
+
+let name = 'Alex';
+let age = 23;
+//string template: note the ``
+console.log(`Hi, my name is ${name}! I am ${age} years old.`);//string injection
