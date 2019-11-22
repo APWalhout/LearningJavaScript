@@ -1,4 +1,4 @@
-let myBook = {//object declaration: let myObject = {}
+let myBook = {//object declaration: let myObject = {} sorta like a struct
     //property definitions
     title: '1984',
     author: 'George Orwell',
@@ -24,5 +24,5 @@ let person = {
 }
 
 console.log(`${person.name} is ${person.age}, and lives in ${person.location}.`);
-person.age = 24;
+person.age = person.age + 1;
 console.log(`${person.name} will be ${person.age} in ${person.birthMonth}.`);
