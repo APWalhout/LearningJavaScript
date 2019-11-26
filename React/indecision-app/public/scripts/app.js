@@ -4,6 +4,12 @@
 console.log('App.js is running');
 
 //JSX - JavaScript XML
+
+var note = {
+    title: 'Indecision App',
+    sub: 'Some filler.'
+};
+
 //template is static, no variable injection
 var template = React.createElement(
     'div',
@@ -11,12 +17,12 @@ var template = React.createElement(
     React.createElement(
         'h1',
         null,
-        'Indecision App'
+        note.title
     ),
     React.createElement(
         'p',
         null,
-        'Some filler.'
+        note.sub
     ),
     React.createElement(
         'ol',
@@ -34,26 +40,33 @@ var template = React.createElement(
     )
 ); //needs to be compiled in BABEL to compatable code below in babeljs.io using env and react plugins
 
-//challenge area
+var user = {
+    name: 'Alex Walhout',
+    age: 23,
+    location: 'Seattle'
+};
+
 var template2 = React.createElement(
     'div',
     null,
     React.createElement(
         'h1',
         null,
-        'Alex Walhout'
+        user.name
     ),
     React.createElement(
         'p',
         null,
-        'Age: 23'
+        'Age: ',
+        user.age
     ),
     React.createElement(
         'p',
         null,
-        'Location: Seattle'
+        'Location: ',
+        user.location
     )
 );
 var appRoot = document.getElementById('app'); //retrieves a <div> to render to
 
-ReactDOM.render(template2, appRoot);
+ReactDOM.render(template, appRoot);
