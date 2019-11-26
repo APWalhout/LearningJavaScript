@@ -4,13 +4,13 @@
 console.log('App.js is running');
 
 //JSX - JavaScript XML
+//needs to be compiled in BABEL to compatable code below in babeljs.io using env and react plugins
 
 var note = {
     title: 'Indecision App',
     sub: 'Some filler.'
 };
 
-//template is static, no variable injection
 var template = React.createElement(
     'div',
     null,
@@ -38,7 +38,7 @@ var template = React.createElement(
             'Item Two'
         )
     )
-); //needs to be compiled in BABEL to compatable code below in babeljs.io using env and react plugins
+);
 
 var user = {
     name: 'Alex Walhout',
@@ -46,27 +46,36 @@ var user = {
     location: 'Seattle'
 };
 
+//verifies that the location data exists
+function getLocation(location) {
+    if (location) {
+        return React.createElement(
+            'p',
+            null,
+            'Location: ',
+            location
+        );
+    }
+    //auto returns undefined else
+}
+
 var template2 = React.createElement(
     'div',
     null,
     React.createElement(
         'h1',
         null,
-        user.name
+        user.name ? user.name : 'Anonymous'
     ),
-    React.createElement(
+    user.age && user.age >= 18 && React.createElement(
         'p',
         null,
         'Age: ',
         user.age
     ),
-    React.createElement(
-        'p',
-        null,
-        'Location: ',
-        user.location
-    )
+    getLocation(user.location)
 );
+
 var appRoot = document.getElementById('app'); //retrieves a <div> to render to
 
-ReactDOM.render(template, appRoot);
+ReactDOM.render(template2, appRoot);
