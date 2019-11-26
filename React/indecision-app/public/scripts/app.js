@@ -8,7 +8,8 @@ console.log('App.js is running');
 
 var note = {
     title: 'Indecision App',
-    sub: 'Some filler.'
+    sub: 'Some filler.',
+    options: ['One', 'Two']
 };
 
 var template = React.createElement(
@@ -19,10 +20,15 @@ var template = React.createElement(
         null,
         note.title
     ),
-    React.createElement(
+    note.sub && React.createElement(
         'p',
         null,
         note.sub
+    ),
+    React.createElement(
+        'p',
+        null,
+        note.options.length > 0 ? 'Here are your options:' : 'No options'
     ),
     React.createElement(
         'ol',
@@ -78,4 +84,4 @@ var template2 = React.createElement(
 
 var appRoot = document.getElementById('app'); //retrieves a <div> to render to
 
-ReactDOM.render(template2, appRoot);
+ReactDOM.render(template, appRoot);
