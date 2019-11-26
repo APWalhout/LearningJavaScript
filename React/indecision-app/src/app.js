@@ -13,6 +13,15 @@ let template = (
     </ol>
 </div>
 );//needs to be compiled in BABEL to compatable code below in babeljs.io using env and react plugins
+
+//challenge area
+let template2 = (
+<div>
+    <h1>Alex Walhout</h1>
+    <p>Age: 23</p>
+    <p>Location: Seattle</p>
+</div>
+);
 let appRoot = document.getElementById('app');//retrieves a <div> to render to
 
-ReactDOM.render(template, appRoot);
+ReactDOM.render(template2, appRoot);

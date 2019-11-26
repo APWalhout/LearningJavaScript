@@ -33,6 +33,27 @@ var template = React.createElement(
         )
     )
 ); //needs to be compiled in BABEL to compatable code below in babeljs.io using env and react plugins
+
+//challenge area
+var template2 = React.createElement(
+    'div',
+    null,
+    React.createElement(
+        'h1',
+        null,
+        'Alex Walhout'
+    ),
+    React.createElement(
+        'p',
+        null,
+        'Age: 23'
+    ),
+    React.createElement(
+        'p',
+        null,
+        'Location: Seattle'
+    )
+);
 var appRoot = document.getElementById('app'); //retrieves a <div> to render to
 
-ReactDOM.render(template, appRoot);
+ReactDOM.render(template2, appRoot);
