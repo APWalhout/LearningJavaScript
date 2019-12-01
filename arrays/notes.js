@@ -22,6 +22,6 @@ notes.splice(1,1);//first argument is which item to start at, second argument is
 //the third argument adds an item at the index and shoves everything after it down one index
 notes.splice(1,0, 'my mid note');//this line doesn't remove an item, just adds. could remove if wanted
 //you can replace an item with splice, but it is easier at times to access an index and reassign it
-node[1] = 'my second mid note';
+notes[1] = 'my second mid note';
 
 console.log(notes);
