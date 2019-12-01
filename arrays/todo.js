@@ -12,5 +12,7 @@ console.log(`Penultimate --> ${todo[todo.length - 2]}`);
 todo.splice(2,1);
 //add new item to end
 todo.push('challenge end note');
+//remove first item from the list
+todo.shift();
 
 console.log(todo);
