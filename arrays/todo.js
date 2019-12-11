@@ -7,7 +7,6 @@ console.log(`You have ${todo.length} things to do:`);
 console.log(`First --> ${todo[0]}`);
 console.log(`Penultimate --> ${todo[todo.length - 2]}`);
 
-//challenge area
 //delete 3rd item
 todo.splice(2,1);
 //add new item to end
@@ -15,4 +14,7 @@ todo.push('challenge end note');
 //remove first item from the list
 todo.shift();
 
-console.log(todo);
+//challenge area
+todo.forEach(function (item, index) {
+    console.log(`${index+1}. ${item}`);
+});

@@ -24,4 +24,10 @@ notes.splice(1,0, 'my mid note');//this line doesn't remove an item, just adds. 
 //you can replace an item with splice, but it is easier at times to access an index and reassign it
 notes[1] = 'my second mid note';
 
+//forEach runs a number of times = to the number of elements
+notes.forEach(function (item, index) {
+    console.log(item);
+    console.log(index);
+});
+
 console.log(notes);
