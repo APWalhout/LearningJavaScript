@@ -1,70 +1,90 @@
 'use strict';
 
-//arguments object is no longer bound with arrow functions
+//src app.js will have the JSX, the scripts app.js contains the babel conversions.
+console.log('App.js is running');
 
-var add = function add(a, b) {
-    console.log(arguments);
-    return a + b;
+//JSX - JavaScript XML
+//needs to be compiled in BABEL to compatable code below in babeljs.io using env and react plugins
+
+var note = {
+    title: 'Indecision App',
+    sub: 'Some filler.',
+    options: ['One', 'Two']
 };
-console.log(add(55, 1001));
 
-var addArrow = function addArrow(a, b) {
-    //console.log(arguments) no longer works
-    a + b;
+var template = React.createElement(
+    'div',
+    null,
+    React.createElement(
+        'h1',
+        null,
+        note.title
+    ),
+    note.sub && React.createElement(
+        'p',
+        null,
+        note.sub
+    ),
+    React.createElement(
+        'p',
+        null,
+        note.options.length > 0 ? 'Here are your options:' : 'No options'
+    ),
+    React.createElement(
+        'ol',
+        null,
+        React.createElement(
+            'li',
+            null,
+            'Item One'
+        ),
+        React.createElement(
+            'li',
+            null,
+            'Item Two'
+        )
+    )
+);
+
+var count = 0;
+var addOne = function addOne() {
+    console.log('addOne');
+};
+var subOne = function subOne() {
+    console.log('subOne');
+};
+var resetCnt = function resetCnt() {
+    console.log('resetCnt');
 };
 
-//this keyword is also no longer bound with arrow functions
+var template2 = React.createElement(
+    'div',
+    null,
+    React.createElement(
+        'h1',
+        null,
+        'Count: ',
+        count
+    ),
+    React.createElement(
+        'button',
+        { onClick: addOne },
+        '+1'
+    ),
+    React.createElement(
+        'button',
+        { onClick: subOne },
+        '-1'
+    ),
+    React.createElement(
+        'button',
+        { onClick: resetCnt },
+        'Reset'
+    )
+);
 
-var user = {
-    name: 'Alex',
-    cities: ['Seattle', 'Kalamazoo', 'Virginia Beach'],
-    printPlacesLived: function printPlacesLived() {
-        console.log(this.name);
-        console.log(this.cities);
-        var workAround = this;
+console.log(template2);
 
-        this.cities.forEach(function (city) {
-            //this is an anonymous function that has no this keyword bound to the object
-            console.log(workAround.name + ' has lived in ' + city);
-        });
-    }
-};
-user.printPlacesLived();
+var appRoot = document.getElementById('app'); //retrieves a <div> to render to
 
-//using arrow functions allows foregoing of workAround
-//since arrow functions don't bind a this object, the reference goes to the parent object (?)
-//if printPlacesLived were an arrow function, it couldn't have a this, meaning the forEach wouldn't work as this would be undefined
-var user2 = {
-    name: 'Alex',
-    cities: ['Seattle', 'Kalamazoo', 'Virginia Beach'],
-    printPlacesLived: function printPlacesLived() {
-        var _this = this;
-
-        //this is not an arrow function, this is es6 function syntax
-        var cityMessages = this.cities.map(function (city) {
-            //map allows transformations of the array
-            //!!!!MAP does NOT change the existing array!
-            return _this.name + ' has lived in ' + city + '!'; //the concatenation is allowed by using map
-        });
-        return cityMessages;
-
-        //this.cities.forEach((city) => {//this is an anonymous function that has no this keyword bound to the object
-        //    console.log(this.name + ' has lived in ' + city);
-        //})
-    }
-};
-console.log(user2.printPlacesLived());
-
-//challenge area
-var multiplier = {
-    numbers: [3, 6, 9],
-    multiplyBy: 3,
-    multiply: function multiply() {
-        var _this2 = this;
-
-        return this.numbers.map(function (number) {
-            return number * _this2.multiplyBy;
-        });
-    }
-};
-console.log(multiplier.multiply());
+ReactDOM.render(template2, appRoot);

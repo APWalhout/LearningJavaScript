@@ -22,30 +22,28 @@ const template = (
 </div>
 );
 
-const user = {
-    name: 'Alex Walhout',
-    age: 23,
-    location: 'Seattle'
+let count = 0;
+const addOne = () => {
+    console.log('addOne');
 };
-
-//verifies that the location data exists
-function getLocation(location)
-{
-    if(location)
-    {
-        return <p>Location: {location}</p>;
-    }
-//auto returns undefined else
+const subOne = () => {
+    console.log('subOne');
+}
+const resetCnt = () => {
+    console.log('resetCnt');
 }
 
 const template2 = (
-<div>
-    <h1>{user.name ? user.name : 'Anonymous'}</h1>
-    {(user.age && (user.age >= 18)) && <p>Age: {user.age}</p>}
-    {getLocation(user.location)}
-</div>
+    <div>
+        <h1>Count: {count}</h1>
+        <button onClick={addOne}>+1</button>
+        <button onClick={subOne}>-1</button>
+        <button onClick={resetCnt}>Reset</button>
+    </div>
 );
+
+console.log(template2);
 
 const appRoot = document.getElementById('app');//retrieves a <div> to render to
 
-ReactDOM.render(template, appRoot);
+ReactDOM.render(template2, appRoot);
