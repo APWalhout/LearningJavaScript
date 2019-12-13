@@ -1,7 +1,6 @@
-'use strict';
-
-var square = function square(x) {
-    return x * x;
+const square = function (x) 
+{
+    return x*x;
 };
 
 //an es6 arrow function, they are always anonymous
@@ -17,17 +16,13 @@ var square = function square(x) {
 //implicit returns in expression syntax
 //if you have to wait on promises and other things, you'd want a full function
 //reading is a bit tricky unless familiar
-var squareArrow = function squareArrow(x) {
-    return x * x;
-};
+const squareArrow = (x) => x*x;
 
 console.log(square(8));
 console.log(squareArrow(5));
 
 //challenge
-var getFirstName = function getFirstName(x) {
-    return x.split(' ')[0];
-};
-var name = 'Alex Walhout';
+const getFirstName = (x) => x.split(' ')[0];
+const name = 'Alex Walhout';
 
 console.log(getFirstName(name));
