@@ -4,13 +4,13 @@ console.log('App.js is running');
 //JSX - JavaScript XML
 //needs to be compiled in BABEL to compatable code below in babeljs.io using env and react plugins
 
-let note = {
+const note = {
     title: 'Indecision App',
     sub: 'Some filler.',
     options: ['One', 'Two']
 };
 
-let template = (
+const template = (
 <div>
     <h1>{note.title}</h1>
     {note.sub && <p>{note.sub}</p>}
@@ -22,7 +22,7 @@ let template = (
 </div>
 );
 
-let user = {
+const user = {
     name: 'Alex Walhout',
     age: 23,
     location: 'Seattle'
@@ -38,7 +38,7 @@ function getLocation(location)
 //auto returns undefined else
 }
 
-let template2 = (
+const template2 = (
 <div>
     <h1>{user.name ? user.name : 'Anonymous'}</h1>
     {(user.age && (user.age >= 18)) && <p>Age: {user.age}</p>}
@@ -46,6 +46,6 @@ let template2 = (
 </div>
 );
 
-let appRoot = document.getElementById('app');//retrieves a <div> to render to
+const appRoot = document.getElementById('app');//retrieves a <div> to render to
 
 ReactDOM.render(template, appRoot);
