@@ -18,3 +18,8 @@ todo.shift();
 todo.forEach(function (item, index) {
     console.log(`${index+1}. ${item}`);
 });
+
+for(let cnt = 0; cnt < todo.length; cnt++)
+{
+    console.log(`${cnt+1}. ${todo[cnt]}`);
+}
