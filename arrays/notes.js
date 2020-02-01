@@ -31,3 +31,5 @@ notes.forEach(function (item, index) {
 });
 
 console.log(notes);
+
+console.log(notes.indexOf('my second mid note'));
