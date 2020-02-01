@@ -31,18 +31,3 @@ notes.forEach(function (item, index) {
 });
 
 console.log(notes);
-
-for(let cnt = 0; cnt < 3; cnt++)
-{
-    console.log(cnt);
-}
-
-for(let cnt = 0; cnt < notes.length; cnt++) 
-{
-    console.log(notes[cnt]);
-}
-
-for(let cnt = notes.length -1; cnt > -1; cnt--)
-{
-    console.log(notes[cnt]);
-}
