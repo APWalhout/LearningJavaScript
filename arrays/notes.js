@@ -43,4 +43,7 @@ console.log(notes);
 
 const index = notes.findIndex(function(note, index){
     console.log(note);
+    return note.title === 'Goals'
 });
+
+console.log(index);
