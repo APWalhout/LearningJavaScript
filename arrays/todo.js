@@ -1,20 +1,33 @@
-//create an array of 5 things to do
-//print message includes length
-//print first and second to last items to console
-const todo = ['Take dog to vet','1 mile run','Pick up beans','Put cat in bag','Groceries'];
+const todo = [{
+    completed: true,
+    text: 'Take dog to vet'
+}, {
+    completed: false,
+    text: '1 mile run'
+}, {
+    completed: true,
+    text: 'Pick up beans'
+}, {
+    completed: false,
+    text: 'Put cat in bag'
+}, {
+    completed: true,
+    text: 'Groceries'
+}];
 
-console.log(`You have ${todo.length} things to do:`);
-console.log(`First --> ${todo[0]}`);
-console.log(`Penultimate --> ${todo[todo.length - 2]}`);
+//convert array of strings to that of objects
+//create a function to remove element by text value
 
-//delete 3rd item
-todo.splice(2,1);
-//add new item to end
-todo.push('challenge end note');
-//remove first item from the list
-todo.shift();
+const deleteTodo = function(noteArray, todoText){
+    const toDelete = noteArray.findIndex(function(note){
+        return note.text.toLowerCase() === todoText.toLowerCase();
+    });
 
-//challenge area
-todo.forEach(function (item, index) {
-    console.log(`${index+1}. ${item}`);
-});
+    if(toDelete > -1)
+    {
+        todo.splice(toDelete, 1);
+    }
+}
+
+deleteTodo(todo, '1 mile run');
+console.log(todo);
