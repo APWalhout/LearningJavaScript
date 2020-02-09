@@ -37,6 +37,20 @@ const getIncompletes = function(taskList) {
     });
 }
 
-deleteTodo(todo, '1 mile run');
-console.log(getIncompletes(todo));
+//sort by completed
+const sortTasks = function(taskList){
+    taskList.sort(function(a, b){
+        if(a.completed && !b.completed){
+            return 1;
+        } else if (!a.completed && b.completed){
+            return -1;
+        }
+        
+        return 0;
+    });
+}
+
+sortTasks(todo);
+// deleteTodo(todo, '1 mile run');
+// console.log(getIncompletes(todo));
 console.log(todo);
