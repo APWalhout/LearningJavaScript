@@ -29,5 +29,14 @@ const deleteTodo = function(noteArray, todoText){
     }
 }
 
+//create a function to return uncompleted tasks
+
+const getIncompletes = function(taskList) {
+    return taskList.filter(function(task){
+        return !task.completed;
+    });
+}
+
 deleteTodo(todo, '1 mile run');
+console.log(getIncompletes(todo));
 console.log(todo);

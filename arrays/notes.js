@@ -15,6 +15,19 @@ const findNote = function(notes, noteTitle) {
     });
 }
 
+const findNotes = function(notes, querry) {
+    querry == querry.toLowerCase();
+
+    return notes.filter(function (note, index){
+        const titleMatch = note.title.toLowerCase().includes(querry);//method chaining by return values
+        const bodyMatch = note.body.toLowerCase().includes(querry);
+    
+        return titleMatch || bodyMatch;
+    });
+}
+
+console.log(findNotes(notes, 'gym'));
+
 // const findNote = function(notes, noteTitle) {
 //     const index = notes.findIndex(function (note, index) {
 //         return note.title.toLowerCase() === noteTitle.toLowerCase();
@@ -24,16 +37,3 @@ const findNote = function(notes, noteTitle) {
 
 const note = findNote(notes, 'office todo');
 console.log(note);
-
-console.log(notes.length);//remember documentation on mdn array
-console.log(notes);//indices start at 0 as they should!
-
-
-// console.log(notes);
-
-// const index = notes.findIndex(function(note, index){
-//     console.log(note);
-//     return note.title === 'Goals'
-// });
-
-// console.log(index);
