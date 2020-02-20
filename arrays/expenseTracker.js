@@ -24,10 +24,6 @@ const account = {
     }
 };
 
-//add income array
-//add addIncome method -> description, amount
-//tweak getAccountSummary, figure out expense, income, and balance
-
 account.addExpense('Rent', 900);
 account.addExpense('Coffee', 6);
 account.addIncome('Job', 1000);
