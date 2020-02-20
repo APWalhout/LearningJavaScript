@@ -17,7 +17,7 @@ const account = {
     return `${this.name} has a balance of $${this.incomeTotal - this.expenseTotal}. $${this.incomeTotal} in income. $${this.expenseTotal} in expenses.`;
     },
     //does a live count of expense total as a back up in case of an error maybe from erased expenses, but also to learn for each loops
-    refreshSummary: function() {
+    refreshExpenses: function() {
         let total = 0;
         this.expenses.forEach(element => total += element.amount);
         return total;
@@ -32,5 +32,5 @@ account.addExpense('Rent', 900);
 account.addExpense('Coffee', 6);
 account.addIncome('Job', 1000);
 console.log(account.getAccountSummary());
-account.expenseTotal = account.refreshSummary();
+account.expenseTotal = account.refreshExpenses();
 console.log(account.getAccountSummary());
