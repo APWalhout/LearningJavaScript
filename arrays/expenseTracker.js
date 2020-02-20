@@ -8,7 +8,7 @@ const account = {
     },
     //getAccountSummary totals up all expenses and prints an account message summary 'account name has X in expenses'
     getAccountSummary: function() {
-    return expenseTotal;
+    return account.expenseTotal;
     },
     //does a live count of expense total as a back up in case of an error maybe from erased expenses, but also to learn for each loops
     refreshSummary: function() {
@@ -25,5 +25,5 @@ const account = {
 account.addExpense('Rent', 900);
 account.addExpense('Coffee', 6);
 console.log(account.getAccountSummary());
-account.expenseTotal = refreshSummary();
+account.expenseTotal = account.refreshSummary();
 console.log(account.getAccountSummary());
