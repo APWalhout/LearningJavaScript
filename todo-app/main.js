@@ -33,3 +33,7 @@ tasks.forEach(function(task){
     newTaskTag.textContent = task.title;
     document.querySelector('body').appendChild(newTaskTag);
 });
+
+document.querySelector('button').addEventListener('click', function(buttonEvent){
+    console.log('button clicked');
+});

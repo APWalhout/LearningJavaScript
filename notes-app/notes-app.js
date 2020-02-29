@@ -11,22 +11,7 @@ const notes = [{
     body: 'Get new chair'
 }] 
 
-// const pTag = document.querySelector('p');//returns the first insance of the p tag.
-// pTag.remove();//removes all selected elements
-
-//querry all and remove
-const pTags = document.querySelectorAll('p');//returns ALL instances
-
-pTags.forEach(function(p){
-    p.textContent = '***';
-    // console.log(p.textContent);
-    //p.remove();
+//mdm addeventlistener to see all the possible listener types
+document.querySelector('button').addEventListener('click',function (e){
+    e.target.textContent = 'The button was clicked';
 });
-
-//add a new element
-//give it a text value
-//pick a place to put it
-//insert it
-const newPTag = document.createElement('p');
-newPTag.textContent = 'New p tag added here from js';
-document.querySelector('body').appendChild(newPTag);
