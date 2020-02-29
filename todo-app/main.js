@@ -34,6 +34,6 @@ tasks.forEach(function(task){
     document.querySelector('body').appendChild(newTaskTag);
 });
 
-document.querySelector('button').addEventListener('click', function(buttonEvent){
+document.querySelector('button#add-note').addEventListener('click', function(buttonEvent){
     console.log('button clicked');
 });
