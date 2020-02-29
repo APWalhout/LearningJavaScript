@@ -12,6 +12,12 @@ const notes = [{
 }] 
 
 //mdm addeventlistener to see all the possible listener types
-document.querySelector('button').addEventListener('click',function (e){
+document.querySelector('button#add-note').addEventListener('click',function (e){
     e.target.textContent = 'The button was clicked';
+});
+
+document.querySelector('button#remove-all').addEventListener('click', function(){
+    document.querySelectorAll('.note').forEach(function(note){
+        note.remove();
+    });
 });
