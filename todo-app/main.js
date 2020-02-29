@@ -37,3 +37,7 @@ tasks.forEach(function(task){
 document.querySelector('button#add-task').addEventListener('click', function(buttonEvent){
     console.log('button clicked');
 });
+
+document.querySelector('input#search-bar').addEventListener('input', function(e){
+    console.log(e.target.value);
+});
