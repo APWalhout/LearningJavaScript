@@ -38,6 +38,28 @@ document.querySelector('button#add-task').addEventListener('click', function(but
     console.log('button clicked');
 });
 
+const filters = {
+    searchText: ''
+};
+
+const renderTasks = function(taskList, filterItems){
+    const filteredTasks = taskList.filter(function(task){
+        return (task.title.toLowerCase().includes(filterItems.searchText.toLowerCase() && !task.completed));
+    });
+
+    //clear out the list
+    document.querySelector('div#taskList').innerHTML = '';
+
+    filteredTasks.forEach(function(task){
+        const taskElement = document.createElement('p');
+        taskElement.textContent = task.title;
+
+        document.querySelector('div#taskList').appendChild(taskElement);
+    });
+};
+
 document.querySelector('input#search-bar').addEventListener('input', function(e){
-    console.log(e.target.value);
+    filters.searchText = e.target.value;
+
+    renderTasks(tasks, filters);
 });
