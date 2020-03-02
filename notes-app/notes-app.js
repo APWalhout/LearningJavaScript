@@ -43,6 +43,6 @@ document.querySelector('#search-text').addEventListener('input', function(e){
     renderNotes(notes, filters);
 });
 
-document.querySelector("input#for-fun").addEventListener('change', function(e){
-    console.log(e.target.checked);
+document.querySelector('select#filter-by').addEventListener('change', function(e){
+    console.log(e.target.value);
 });
