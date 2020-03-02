@@ -43,8 +43,6 @@ document.querySelector('#search-text').addEventListener('input', function(e){
     renderNotes(notes, filters);
 });
 
-document.querySelector('form#name').addEventListener('submit', function(e){
-    e.preventDefault();//stop the default behavior of submit, default is to refresh and move info to url
-    console.log(e.target.elements.firstName.value);
-    e.target.elements.firstName.value = '';
+document.querySelector("input#for-fun").addEventListener('change', function(e){
+    console.log(e.target.checked);
 });
