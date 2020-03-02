@@ -37,14 +37,14 @@ document.querySelector('button#add-note').addEventListener('click',function (e){
     e.target.textContent = 'The button was clicked';
 });
 
-document.querySelector('button#remove-all').addEventListener('click', function(){
-    document.querySelectorAll('.note').forEach(function(note){
-        note.remove();
-    });
-});
-
 document.querySelector('#search-text').addEventListener('input', function(e){
     filters.searchText = e.target.value;
     
     renderNotes(notes, filters);
+});
+
+document.querySelector('form#name').addEventListener('submit', function(e){
+    e.preventDefault();//stop the default behavior of submit, default is to refresh and move info to url
+    console.log(e.target.elements.firstName.value);
+    e.target.elements.firstName.value = '';
 });

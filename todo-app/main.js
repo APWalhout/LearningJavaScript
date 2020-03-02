@@ -9,10 +9,6 @@ const tasks = [{
     completed: true
 }] 
 
-document.querySelector('button#add-task').addEventListener('click', function(buttonEvent){
-    console.log('button clicked');
-});
-
 const filters = {
     searchText: ''
 };
@@ -47,5 +43,19 @@ renderTasks(tasks, filters);
 document.querySelector('input#search-bar').addEventListener('input', function(e){
     filters.searchText = e.target.value;
 
+    renderTasks(tasks, filters);
+});
+
+document.querySelector('form#newTodo').addEventListener('submit', function(e){
+    e.preventDefault();
+
+    tasks.push({
+        title: e.target.elements.createTask.value,
+        completed: false
+    });
+
+    e.target.elements.createTask.value = '';
+
+    //refresh screen
     renderTasks(tasks, filters);
 });
