@@ -44,7 +44,12 @@ const filters = {
 
 const renderTasks = function(taskList, filterItems){
     const filteredTasks = taskList.filter(function(task){
-        return (task.title.toLowerCase().includes(filterItems.searchText.toLowerCase() && !task.completed));
+        //return (task.title.toLowerCase().includes((filterItems.searchText.toLowerCase()) && (!task.completed)));
+        if(task.title.toLowerCase().includes(filterItems.searchText.toLowerCase())){
+            if(!task.completed){
+                return true;
+            }
+        }
     });
 
     //clear out the list
