@@ -15,6 +15,10 @@ const filters = {
     searchText: ''
 }
 
+//CRUD create read update delete operations are necessary for data storage
+//localStorage.setItem('location', 'Seattle');//key value pair
+console.log(localStorage.getItem('location'));
+
 const renderNotes = function(notesList, filterItems){
     const filteredNotes = notesList.filter(function(note){
         return note.title.toLowerCase().includes(filterItems.searchText.toLowerCase());
